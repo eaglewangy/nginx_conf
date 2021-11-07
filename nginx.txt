@@ -1,0 +1,2 @@
+cd nginx
+./auto/configure --with-http_v2_module --with-http_ssl_module --with-openssl=../openssl
