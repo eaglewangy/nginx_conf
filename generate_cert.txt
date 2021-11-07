@@ -1,0 +1,12 @@
+1. 列举曲线
+openssl ecparam -list_curves
+
+2. 生成私钥
+openssl ecparam -genkey -name prime256v1 -out ec_private_key.pem
+
+3. 生成csr
+openssl req -new -sha256 -key ec_private_key.pem -out ec_csr.csr
+
+4. 生成证书
+openssl req -x509 -sha256 -days 3650 -key ec_private_key.pem -in ec_csr.csr -out ec_cert.pem
+
